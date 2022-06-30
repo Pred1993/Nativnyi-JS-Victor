@@ -24,59 +24,31 @@ const students = [
         scores: 100
     }
 ];
-// const names = ['Bob', 'Alex', 'Nick', 'John']
+// const names = ["Bob", "Alex", "Nick", "John"]
 const getNames = (arr) => {
     const result = []
-    const func = t => t.name
+    const func = st => st.name
     for (let i = 0; i < arr.length; i++) {
         const newValue = func(arr[i])
         result.push(newValue)
+
     }
     return result
 }
 console.log(getNames(students))
 
-//Начислить по 10 баллов всем студентам
-// const addScores = (arr) => {
-//     const result = []
-//     const func = t => t.scores + 10
-//     for (let i = 0; i < arr.length; i++) {
-//         const newValue = func(arr[i])
-//         arr[i].scores = newValue
-//         result.push(arr[i])
-//     }
-//     return result
-// }
-// console.log(addScores(students))
-
-// Второй вариант решения
-const addScoresDubl = (arr) => {
+const addScores = (arr) => {
     const result = []
-    const func = (t) => ({...t, scores: t.scores + 10})
+    const func = (st) => ({...st, scores: st.scores + 10})
     for (let i = 0; i < arr.length; i++) {
-        const newValues = func(arr[i])
-        result.push(newValues)
+        const newValue = func(arr[i])
+        result.push(newValue)
     }
     return result
 }
-console.log(addScoresDubl(students))
+console.log(addScores(students))
 
-// Добавить свойство isStudent: true
-
-// const addIsStudent = (arr) => {
-//     const result = []
-//     const func = (t) => ({...t, isStudent: true})
-//     for (let i = 0; i < arr.length; i++) {
-//         const newValue = func(arr[i])
-//         result.push(newValue)
-//     }
-//     return result
-// }
-// console.log(addIsStudent(students))
-
-// Добавить свойство isStudent: true ворой способ через передачу функции
-
-const addIsStudent = (arr, func) => {
+const getMappedArray = (arr, func) => {
     const result = []
     for (let i = 0; i < arr.length; i++) {
         const newValue = func(arr[i])
@@ -84,49 +56,35 @@ const addIsStudent = (arr, func) => {
     }
     return result
 }
-console.log(addIsStudent(students, t => ({...t, isStudent: true})))
+console.log(getMappedArray(students, st => st.name))
+console.log(getMappedArray(students, (st) => ({...st, scores: st.scores + 10})))
 
-// Решение тойже задачи методом map
-console.log(students.map(t => ({...t, isStudent: true})))
-
-// Перебрать наших студентов найти у кого из них больше 100 балов и вывести в новый массив
-// const filterStudent = (arr, func) => {
-//     const result = []
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i].scores >= 100) {
-//             const newValue = func(arr[i])
-//             result.push(newValue)
-//         }
-//     }
-//     return result
-// }
-// console.log(filterStudent(students, t => ({...t})))
+console.log(students.map((st) => st.name))
 
 
-// Ещё один способ
-const filterStudent = (arr, func) => {
+// Пишим свой собственный метод фильтр
+const myFilter = (arr, func) => {
     const result = []
     for (let i = 0; i < arr.length; i++) {
-        const newValue = func(arr[i])
+        const newValue = func(arr[i]) // => true / false
         if (newValue === true) {
             result.push(arr[i])
         }
     }
     return result
 }
-console.log(filterStudent(students, t => t.scores >= 100))
-// Решение задачи методом фильтр
-console.log(students.filter(t => t.scores >= 100))
-
-// Метод find внутрянка
+console.log(myFilter(students, st => st.scores > 100))
+// console.log(student.filter(st => st.scores > 100))
+//Метод find
 
 const myFind = (arr, func) => {
     for (let i = 0; i < arr.length; i++) {
-        const newValue = func(arr[i])
+        const newValue = func(arr[i]) // => true / false
         if (newValue === true) {
             return arr[i]
         }
     }
 }
-console.log(myFind(students, t => t.name === 'Alex'))
-console.log(students.find(t => t.name === 'Alex'))
+
+console.log((students.find(st => st.name === 'Alex')))
+console.log(myFind(students, st => st.name === 'Alex'))

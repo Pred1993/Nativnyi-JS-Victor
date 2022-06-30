@@ -1,90 +1,83 @@
-const students = [
-    {
-        name: "Bob",
-        age: 22,
-        isMarried: true,
-        scores: 85,
-    },
-    {
-        name: "Alex",
-        age: 21,
-        isMarried: true,
-        scores: 89
-    },
-    {
-        name: "Nick",
-        age: 20,
-        isMarried: false,
-        scores: 120
-    },
-    {
-        name: "John",
-        age: 19,
-        isMarried: false,
-        scores: 100
-    }
-];
-// const names = ["Bob", "Alex", "Nick", "John"]
-const getNames = (arr) => {
-    const result = []
-    const func = st => st.name
-    for (let i = 0; i < arr.length; i++) {
-        const newValue = func(arr[i])
-        result.push(newValue)
-
-    }
-    return result
-}
-console.log(getNames(students))
-
-const addScores = (arr) => {
-    const result = []
-    const func = (st) => ({...st, scores: st.scores + 10})
-    for (let i = 0; i < arr.length; i++) {
-        const newValue = func(arr[i])
-        result.push(newValue)
-    }
-    return result
-}
-console.log(addScores(students))
-
-const getMappedArray = (arr, func) => {
-    const result = []
-    for (let i = 0; i < arr.length; i++) {
-        const newValue = func(arr[i])
-        result.push(newValue)
-    }
-    return result
-}
-console.log(getMappedArray(students, st => st.name))
-console.log(getMappedArray(students, (st) => ({...st, scores: st.scores + 10})))
-
-console.log(students.map((st) => st.name))
-
-
-// Пишим свой собственный метод фильтр
-const myFilter = (arr, func) => {
-    const result = []
-    for (let i = 0; i < arr.length; i++) {
-        const newValue = func(arr[i]) // => true / false
-        if (newValue === true) {
-            result.push(arr[i])
-        }
-    }
-    return result
-}
-console.log(myFilter(students, st => st.scores > 100))
-// console.log(student.filter(st => st.scores > 100))
-//Метод find
-
-const myFind = (arr, func) => {
-    for (let i = 0; i < arr.length; i++) {
-        const newValue = func(arr[i]) // => true / false
-        if (newValue === true) {
-            return arr[i]
-        }
+// const arr = [1, 2, 3, 4, 5]
+// const copyUser = user
+// // {} - нет !!!!
+// // new Object()
+// //Object.assign({}, user)
+// // [] -
+// // new Array()
+//
+// user.name = "Anne"
+//
+// const realCopyUser = {...user} // #5666
+// const realCopyUser = [...arr]
+// // realCopyUser.name = user.name
+// // realCopyUser.age = user.age
+// // realCopyUser.isMarried = user.isMarried
+// console.log(realCopyUser)
+// console.log(realCopyUser === user)// false
+// console.log(copyUser === user)// false
+// realCopyUser.name = 'Bob'
+// console.log(user.name)
+const user = { // #4567
+    name: "Bob",
+    age: 26,
+    isMarried: true,
+    friend: ["Alex", "Bob", "John"],
+    address: {
+        city: "Boborujsk",
+        street: "Lenina"
     }
 }
+const copyUser = {...user}
+// copyUser.friend.push("Anne")
+// console.log(user)
+// console.log(user === copyUser)
+// console.log(user.friend === copyUser.friend)
 
-console.log((students.find(st => st.name === 'Alex')))
-console.log(myFind(students, st => st.name === 'Alex'))
+console.log(user.friend === copyUser.friend)
+const deepCopy = {
+    ...user,
+    friend: [...user.friend],
+    address: {...user.address}
+}
+console.log(user.friend === deepCopy.friend)
+console.log(copyUser.address === deepCopy.address)
+console.log(deepCopy)
+const student = [
+    {name: 'Bob'},
+    {name: 'Alex'},
+    {name: 'Ann'}
+]
+const copyStudent = [...student]
+console.log(copyStudent)
+
+// const deepCopyStudent = []
+// for (let i = 0; i < student.length; i++) {
+//     deepCopyStudent[i] = {...student[i]}
+// }
+// const deepCopyStudent = student.map(student => ({...student}))const students = [
+//     {
+//         name: "Bob",
+//         age: 22,
+//         isMarried: true,
+//         scores: 85,
+//     },
+//     {
+//         name: "Alex",
+//         age: 21,
+//         isMarried: true,
+//         scores: 89
+//     },
+//     {
+//         name: "Nick",
+//         age: 20,
+//         isMarried: false,
+//         scores: 120
+//     },
+//     {
+//         name: "John",
+//         age: 19,
+//         isMarried: false,
+//         scores: 100
+//     }
+// ];

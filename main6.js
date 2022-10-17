@@ -160,6 +160,8 @@ let superStudent = newStudents
 console.log(addFriends(students));
 
 
+// students.map(student => ({...student, friends: students.map(st => st.name).filter(name => name !== student.name)}))
+
 
 
 

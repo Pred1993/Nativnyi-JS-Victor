@@ -548,13 +548,78 @@
 // Пример
 // alphabetPosition("The sunset sets at twelve o' clock.")
 // Должен возвращаться "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"(в виде строки)
-function alphabetPosition(text) {
-    let arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    let arr = text.toLowerCase().split('')
-    console.log(arr)
-    return text;
-}
+// function alphabetPosition(text) {
+//     let arr_en = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//     let newText = text.replace(/[^a-zA-Z]/gi, '').toLowerCase().split('')
+//     console.log(newText)
+//     const resultArr = []
+//     for (let i = 0; i < newText.length; i++) {
+//        let index = arr_en.indexOf(newText[i])
+//        resultArr.push(index + 1)
+//     }
+//     return resultArr.join(' ')
+// }
+//
+// console.log(alphabetPosition("The 0 sunset sets at twelve o' clock."))
+// console.log(alphabetPosition("The narwhal bacons at midnight."))
 
-console.log(alphabetPosition("The sunset sets at twelve o' clock."))
-console.log(alphabetPosition("The narwhal bacons at midnight."))
-// Не решена
+//23. Дан массив целых чисел, найдите то, которое встречается нечетное количество раз.
+// Всегда будет только одно целое число, которое встречается нечетное количество раз.
+// Примеры
+// [7]должен вернуть 7, потому что это происходит 1 раз (что нечетно).
+// [0]должен вернуть 0, потому что это происходит 1 раз (что нечетно).
+// [1,1,2]должен вернуть 2, потому что это происходит 1 раз (что нечетно).
+// [0,1,0,1,0]должен вернуть 0, потому что он встречается 3 раза (что нечетно).
+// [1,2,2,3,3,3,4,3,3,3,2,2,1]должен вернуть 4, потому что он появляется 1 раз (что нечетно).
+//
+// function findOdd(array) {
+//     let arrResult
+//     for (let i = 0; i < array.length; i++) {
+//         debugger
+//         let newArray = array.filter(el => {
+//             debugger
+//            return  el === array[i]})
+//         if(!(newArray.length % 2 === 0)) {
+//            arrResult = array[i]
+//            break
+//         }
+//     }
+//     //happy coding!
+//     return arrResult
+// }
+// console.log(findOdd([1,1,10,1,1]))
+// console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
+// console.log(findOdd([1,1,2,-2,5,2,4,4,-1,-2,5]))
+// console.log(findOdd([20,1,1,2,2,3,3,5,5,4,20,4,5]))
+// console.log(findOdd([10]))
+// console.log(findOdd([5,4,3,2,1,5,4,3,2,10,10]))
+//
+// const findOdd = (xs) => xs.reduce((a, b) => a ^ b);// короткое решение
+
+//24
+//Напишите алгоритм, который берет массив и перемещает все нули в конец, сохраняя порядок остальных элементов.
+// function moveZeros(arr) {
+//     let newArray = arr.filter(el => el !== 0)
+//     let num = arr.length - newArray.length
+//     for (let i = 0; i < num; i++) {
+//         newArray.push(0)
+//     }
+//     return newArray
+// }
+//
+// console.log(moveZeros([false,1,0,1,2,0,1,3,"a"])) // returns[false,1,1,2,1,3,"a",0,0]
+
+//25
+//Переместите первую букву каждого слова в конец, а затем добавьте «ay» в конец слова. Оставьте знаки препинания нетронутыми.
+//
+// Примеры
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+
+// function pigIt(string) {
+//     let arr = string.split(' ').map(el => el === '!' || el === '?' || el === '.' || el === ',' ? el : el.replace(/[,\.\?!]/gi, '').concat(el[0] + 'ay').slice(1))
+//    return arr.join(' ')
+// }
+//
+// console.log(pigIt('Pig, latin. is! cool? !')); // igPay atinlay siay oolcay
+// //console.log(pigIt('Hello world !')); // elloHay orldway !

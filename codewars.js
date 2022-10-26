@@ -623,3 +623,86 @@
 //
 // console.log(pigIt('Pig, latin. is! cool? !')); // igPay atinlay siay oolcay
 // //console.log(pigIt('Hello world !')); // elloHay orldway !
+
+//25
+// Напишите функцию, которая принимает неотрицательное целое число (секунды) в качестве входных данных и возвращает время в удобочитаемом формате ( HH:MM:SS)
+//
+// HH= часы, дополненные до 2 цифр, диапазон: 00–99
+// MM= минуты, дополненные до 2 цифр, диапазон: 00–59
+// SS= секунды, дополненные до 2 цифр, диапазон: 00–59
+// Максимальное время никогда не превышает 359999 ( 99:59:59)
+//
+// Вы можете найти несколько примеров в тестовых приборах.
+
+
+// function humanReadable(seconds) {
+//     if (seconds < 0 || seconds > 359999) {
+//         return null
+//     }
+//     if (seconds === 0) {
+//         return '00:00:00'
+//     }
+//     // Do the math for the hours
+//     let hours = Math.floor(seconds / 3600)
+//     seconds = seconds - (hours * 3600)
+//     if (hours < 10) {
+//         hours = '0' + hours
+//     }
+//     // Do the math for the minutes
+//     let minutes = Math.floor(seconds / 60)
+//     seconds = seconds - (minutes * 60)
+//     if (minutes < 10) {
+//         minutes = '0' + minutes
+//     }
+//     // Check if there are fewer than 10 seconds remaining to account for leading zero
+//     if(seconds < 10) {
+//         seconds = '0' + seconds
+//     }
+//     return `${hours}:${minutes}:${seconds}`
+// }
+
+// function humanReadable(seconds) {
+//     var pad = function(x) { return (x < 10) ? "0"+x : x; }
+//     return pad(Math.floor(seconds / (60*60))) + ":" +
+//         pad(Math.floor(seconds / 60 % 60)) + ":" +
+//         pad(seconds % 60)
+// } // второй вариант из codewars
+// console.log(humanReadable(0))
+// console.log(humanReadable(59))
+// console.log(humanReadable(60))
+// console.log(humanReadable(90))
+// console.log(humanReadable(4599))
+
+//26
+// Маркетинговая команда тратит слишком много времени на ввод хэштегов.
+//     Давайте поможем им с нашим генератором хэштегов!
+//     Вот сделка:
+//     Он должен начинаться с хэштега ( #).
+// Во всех словах первая буква должна быть заглавной.
+//     Если окончательный результат длиннее 140 символов, он должен вернуть false.
+//     Если ввод или результат представляет собой пустую строку, она должна возвращаться false.
+//     Примеры
+// " Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
+// "    Hello     World   "                  =>  "#HelloWorld"
+// ""                                        =>  false
+
+// function generateHashtag (str) {
+//     if ( str.split(' ').join('') === '') {
+//         debugger
+//         return false
+//     }
+//     let result  = '#' + str.split(' ').filter(el => el).map(el => (el[0].toUpperCase()) + el.slice(1)).join('')
+//     if (result.length > 140) {
+//         return false
+//     }
+//     return result
+// }
+//
+// console.log(generateHashtag("Do We have A Hashtag"))
+// console.log(generateHashtag(""))
+// // console.log(generateHashtag(" ".repeat(200)))
+// // console.log(generateHashtag("                  "))
+// // console.log(generateHashtag("a".repeat(139)))
+// // console.log(generateHashtag("Codewars"))
+// console.log(generateHashtag("code" + " ".repeat(10) + "wars"))
+// // console.log(generateHashtag("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"))

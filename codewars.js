@@ -818,3 +818,60 @@
 // Примечание: Ваш ответ всегда должен быть 6 символов длиной, стенография с 3 не будет работать здесь.
 //
 // Ниже приводятся примеры ожидаемых выходных значений:
+function rgb(r, g, b) {
+    function transform(value) {
+        function inLetter(value) {
+            let arr = ['A', 'B', 'C', 'D', 'E', 'F']
+            if (value === 0) {
+                return '00'
+            } else if (value === 16) {
+                return '10'
+            } else if (value % 16 >= 10) {
+                return arr[(value % 16).toString()[1]]
+            } else return (value % 16).toString()
+        }
+
+        if (value / 16 <= 1) {
+            return inLetter(value)
+        } else {
+            return transform(Math.floor(value / 16)) + inLetter(value)
+        }
+    }
+
+    let rgbArr = [r, g, b]
+    let result = ''
+    for (let i = 0; i < rgbArr.length; i++) {
+        if (rgbArr[i] >= 255 || rgbArr[i] <= 0) {
+            if (rgbArr[i] >= 255) {
+                rgbArr[i] = 255
+            } else {
+                rgbArr[i] = 0
+            }
+        }
+        if (rgbArr[i] < 16 && rgbArr[i] > 0) {
+            result = result + '0' + transform(rgbArr[i])
+        } else {
+            result += transform(rgbArr[i])
+        }
+    }
+    return result
+}
+
+//
+console.log(rgb(148, 0, 211))
+console.log(rgb(0, 0, -20))
+console.log(rgb(255, 255, 255))
+console.log(rgb(22, 14, 203))
+console.log(rgb(16, 146, 300))
+
+//второй вариант
+function rgb(r, g, b){
+    return toHex(r)+toHex(g)+toHex(b);
+}
+
+function toHex(d) {
+    if(d < 0 ) {return "00";}
+    if(d > 255 ) {return "FF";}
+    return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
+}
+console.log(Number(211).toString(16))

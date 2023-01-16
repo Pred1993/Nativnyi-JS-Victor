@@ -397,9 +397,7 @@
 
 // второй вариант
 // Array.prototype.customFlat = function () {
-//     debugger
 //     return this.reduce((acc, item) => {
-//         debugger
 //         return Array.isArray(item) ? [...acc, ...item.customFlat()]: [...acc, item]
 //     }, [])
 // }
@@ -716,3 +714,107 @@
 // // console.log(generateHashtag("Codewars"))
 // console.log(generateHashtag("code" + " ".repeat(10) + "wars"))
 // // console.log(generateHashtag("Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"))
+// function editDate (str) {
+//     let result = str.split('-')
+//     console.log(result)
+//     return `${result[2].slice(0,2)}.${result[1]}.${result[0]}`
+// }
+
+//27 Запись функции, которая принимает строку из скобок и определяет, является ли порядок скобок допустимым. Функция должна возвращать true, если строка действительна, и false, если недопустима.
+// Examples
+// "()"              =>  true
+// ")(()))"          =>  false
+// "("               =>  false
+// "(())((()())())"  =>  true
+
+// function validParentheses(parens){
+//     let sum = 0;
+//
+//     for (let i = 0 ; i < parens.length && sum >= 0; i++) {
+//         debugger
+//         sum += (parens[i] === '(') ? 1 : -1;
+//     }
+//
+//     return (sum === 0);
+// }
+//
+// // console.log(validParentheses(')'))
+// // console.log(validParentheses(')()()'))
+// // console.log(validParentheses('(()()('))
+// // console.log(validParentheses('())(()))'))
+// //
+// // console.log(validParentheses('(())(())'))
+// // console.log(validParentheses('()()'))
+// // console.log(validParentheses('(()()()())(())'))
+//
+// console.log(validParentheses('())(()'))
+
+//27 Если задан массив целых чисел, удалите наименьшее значение. Не изменяйте исходный массив/список. Если имеется несколько элементов с одним и тем же значением, удалите один с нижним индексом. Если у вас есть пустой массив/список, верните пустой массив/список.
+//
+// Не меняйте порядок элементов, которые остались.
+// Examples
+// * Input: [1,2,3,4,5], output = [2,3,4,5]
+//     * Input: [5,3,2,1,4], output = [5,3,2,4]
+//     * Input: [2,2,1,2,1], output = [2,2,2,1]
+
+// function removeSmallest(numbers) {
+//     if (numbers.length) {
+//         let newNumbers = [...numbers]
+//         let el1 = newNumbers.sort((a, b) => a-b)[0]
+//         for (let i = 0; i < numbers.length; i++) {
+//             if (numbers[i] === el1) {
+//                 numbers.splice(i, 1)
+//                 break
+//             }
+//         }
+//         return numbers
+//     }
+//     return []
+// }
+//
+// // console.log(removeSmallest([1, 2, 3, 4, 5]))
+// // console.log(removeSmallest([5, 3, 2, 1, 4]))
+// // console.log(removeSmallest([2, 2, 1, 2, 1]))
+// console.log(removeSmallest([ 2, 1, 5, -10, 4, -10, 2 ]))
+//второй способ
+// function removeSmallest(numbers) {
+//     const smallNumber = Math.min(...numbers);
+//     const indexNumber = numbers.indexOf(smallNumber);
+//
+//     return numbers.filter((el, index) => index !== indexNumber);
+// }
+//
+// console.log(removeSmallest([2, 1, 5, -10, 4, -10, 2]))
+
+//28
+// Напишите функцию с именем first_non_repeating_letter, которая принимает строковый ввод и возвращает первый символ, который не повторяется нигде в строке.
+//
+//     Например, если задан входной элемент 'stress', то функция не должна возвращать, так как буква t встречается только один раз в строке и возникает первым в строке.
+//
+//     Как дополнительное испытание, верхние и нижние буквы считаются одним символом, но функция должна возвращать правильный регистр ...
+// function firstNonRepeatingLetter(s) {
+//     let newArray = s.split('')
+//     let copyArr = []
+//     for (let i = 0; i < newArray.length; i++) {
+//         let value = newArray[i].toUpperCase()
+//         let sum = 0
+//         for (let j = 0; j < newArray.length; j++) {
+//             if (value === newArray[j].toUpperCase()) {
+//                 sum = sum + 1
+//             }
+//         }
+//         if (sum === 1) {
+//             copyArr.push(newArray[i])
+//         }
+//         sum = 0
+//     }
+//     return copyArr.join()[0] === undefined ? '' : copyArr.join()[0]
+// }
+//
+// console.log(firstNonRepeatingLetter('ggAafl'))
+
+//29 Функция rgb является неполной. Выполните её так, чтобы переход в RGB десятичные значения приводил к шестнадцатеричному представлению. Допустимые десятичные значения для RGB равны 0-255. Любые значения, выпадающие из этого диапазона, должны быть округлены до ближайшего действительного значения.
+//
+// Примечание: Ваш ответ всегда должен быть 6 символов длиной, стенография с 3 не будет работать здесь.
+//
+// Ниже приводятся примеры ожидаемых выходных значений:

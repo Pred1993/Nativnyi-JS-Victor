@@ -89,24 +89,24 @@ async function f() {
 f()
 // Занятия с Лёшей
 // Promise - это объект в котором есть состояние(PromiseState): pending, fulfilled, rejected, и он может хранить какой-то результат(PromiseResult), а также есть методы: then(), catch(), finally()
-// const promise = new Promise((resolve, reject) => { // // создан Promise с помощью конструктора, через конструктор создаётся для более обширной логики внутри промиса, в отличие от фабричной функции
-//     setTimeout(() => {
-//         let data = {name: 'Artem', age: 24}
-//         resolve(data) // PromiseState: "fulfilled", PromiseResult: data
-//         reject(new Error('Some Error')) // PromiseState: "rejected", PromiseResult: Error: Some Error at http://localhost:63342/JS-lesson/lesson10_Promise.js:28:12
-//     }, 1000)
-// })
-// promise.then((data) => {
-//     console.log(data)
-// })
-//     .catch((err) => {
-//         console.log(err)
-//     })
-//     .finally(() => {
-//
-//     })
-//
-// console.log(promise)
+const promise = new Promise((resolve, reject) => { // // создан Promise с помощью конструктора, через конструктор создаётся для более обширной логики внутри промиса, в отличие от фабричной функции
+    setTimeout(() => {
+        let data = {name: 'Artem', age: 24}
+        resolve(data) // PromiseState: "fulfilled", PromiseResult: data
+        reject(new Error('Some Error')) // PromiseState: "rejected", PromiseResult: Error: Some Error at http://localhost:63342/JS-lesson/lesson10_Promise.js:28:12
+    }, 1000)
+})
+promise.then((data) => {
+    console.log(data)
+})
+    .catch((err) => {
+        console.log(err)
+    })
+    .finally(() => {
+
+    })
+
+console.log(promise)
 
 // Пример цепочки Promise
 

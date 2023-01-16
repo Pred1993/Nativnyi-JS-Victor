@@ -43,13 +43,41 @@
 //     console.log('я сработал через 3 секунды')
 //})
 
-    let promise = new Promise((resolve) => {
-        let i =0
-        setInterval(() => {
-            ++i
-            resolve(i)
-        }, 3000)
-    })
-promise.then((res) => {
-    console.log(res)
+//     let promise = new Promise((resolve) => {
+//         let i =0
+//         setInterval(() => {
+//             ++i
+//             resolve(i)
+//         }, 3000)
+//     })
+// promise.then((res) => {
+//     console.log(res)
+//
+
+async function yo() {
+    return 5
+}
+
+const a = yo()
+
+console.log(a)
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let data = {name: 'Artem', age: 24}
+        resolve(data) // PromiseState: "fulfilled", PromiseResult: data
+        reject(new Error('Some Error')) // PromiseState: "rejected", PromiseResult: Error: Some Error at http://localhost:63342/JS-lesson/lesson10_Promise.js:28:12
+    }, 1000)
 })
+
+promise.then((data) => {
+    console.log(data)
+})
+    .catch((err) => {
+        console.log(err)
+    })
+    .finally(() => {
+
+    })
+
+console.log(promise)

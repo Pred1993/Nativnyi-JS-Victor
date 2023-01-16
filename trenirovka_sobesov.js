@@ -55,15 +55,15 @@
 // class User {
 //     // nameLength = 'star'
 //     constructor(value) {
-//         this.nameLength = value
+//         this.name = value
 //     }
 //
 //     get nameLength() {
-//         return this._nameLength
+//         return this.name
 //     }
 //
 //     set nameLength(value) {
-//         this._nameLength = value
+//         this.name = value
 //     }
 // }
 //
@@ -153,16 +153,60 @@
 // }
 // group.showUsersWithGroup()
 
-const user = {
-    sleep() {
-        this.isSleeping = true
-    }
-}
+// const user = {
+//     sleep() {
+//         this.isSleeping = true
+//     }
+// }
+//
+// const john = {}
+// console.dir(user)
+//
+// john.__proto__ = user
+// console.dir(john)
+// // john.sleep()
+// // console.log(john.isSleeping)
 
-const john = {}
-console.dir(user)
-
-john.__proto__ = user
-console.dir(john)
-// john.sleep()
-// console.log(john.isSleeping)
+// Array.prototype.newFlat = function () {
+//     return this.reduce((acc, el) => Array.isArray(el) ? [...acc, ...el.newFlat()] : [...acc, el], [])
+// }
+//
+// console.log([1, 2, 3, [4, 5, [6, 7, [8, 9]]]].newFlat())
+//
+// Function.prototype.newBind = function (context, ...arg1) {
+//     const param = this
+//     return function (...arg2) {
+//         return param.call(context, ...arg1, ...arg2)
+//     }
+// }
+//
+// let obj1 = {
+//     name: 'Artem',
+//     sayName: function () {
+//         console.log("Hello" + ' ' + this.name)
+//     }
+// }
+//
+// let obj2 = {
+//     name: 'Andrey'
+// }
+//
+// console.log(obj1.sayName.newBind(obj2)())
+// 'use strict'
+// const foo = () => {
+//     bar()
+//     {
+//         function bar() {
+//
+//         }
+//     }
+//     console.log(bar)
+// }
+// foo()
+// function hello () {
+//
+// }
+// console.dir(hello)
+// console.log(hello.prototype === Object.prototype)
+let man = {firstNmae: 'adawdwad'}
+console.log(man.toString())

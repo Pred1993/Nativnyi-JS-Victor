@@ -890,3 +890,8 @@
 // }
 //
 // console.log(treeDepth(app, 0))
+
+let foo = (arr1, arr2) => {
+
+}
+console.log(foo([1,2,3,4], [3,4,5,6]))

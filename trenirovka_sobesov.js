@@ -208,5 +208,113 @@
 // }
 // console.dir(hello)
 // console.log(hello.prototype === Object.prototype)
-let man = {firstNmae: 'adawdwad'}
-console.log(man.toString())
+// let man = {firstNmae: 'adawdwad'}
+// console.log(man.toString())
+
+// let promise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res(4)
+//     }, 2000)
+// }).then((res) => {
+//     console.log(res)
+//     return 6
+// }).then((res) => {
+//     console.log(res)
+// })
+//
+//
+// const foo = () => {
+//     let count = 0
+//     return () => {
+//         count++
+//         return count
+//     }
+// }
+//
+// const foo1 = foo()
+// const foo2 = foo()
+//
+// console.log(foo1())
+// console.log(foo1())
+// console.log(foo1())
+//
+// console.log(foo2())
+// console.log(foo2())
+// console.log(foo2())
+//
+// const obj = {
+//     count: 5,
+//     increment() {
+//         console.log(this.count += 1)
+//         return this.count
+//     }
+//
+// }
+//
+// // console.log(obj.increment())
+// const foo = obj.increment.bind(obj)
+//
+// console.log(foo())
+
+// function Car(name) {
+//     this.name = name
+// }
+//
+// const volvo = new Car('Volvo')
+//
+// const benz = Car('benz')
+// console.log(window.name)
+// const obj = {
+//     count: 5,
+//     increment() {
+//         return this.count
+//     }
+// }
+//
+// console.dir(obj)
+// const obj2 = {
+//     count: 4
+// }
+//
+// // obj2.__proto__ = obj
+// console.log(obj2.increment())
+
+
+// class Foo {
+//   static city = 'Minsk'
+//
+//
+// }
+//
+// class Foo1 extends Foo {
+//
+//     getName() {
+//         return this.name
+//     }
+// }
+
+// const obj = new Foo('artem', 29)
+// console.log(obj)
+
+// const Foo = {
+//
+// }
+//
+// const Foo1 = {
+//
+// }
+//
+// Object.setPrototypeOf(Foo1, Foo)
+//
+// Foo.name = 'Alex'
+//
+// console.log(Foo)
+// console.log(Foo1)
+class BaseUser {
+
+}
+class User extends BaseUser{
+
+}
+
+console.log(User.__proto__)

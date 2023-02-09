@@ -892,4 +892,71 @@
 // console.log(treeDepth(app, 0))
 
 
-
+// const products = [
+//     {
+//         name: 'cola',
+//         type: 'food',
+//         price: 10
+//     },
+//     {
+//         name: 'sneakers',
+//         type: 'clothes',
+//         price: 10
+//     },
+//     {
+//         name: 'gold',
+//         type: 'metal',
+//         price: 10
+//     },
+//     {
+//         name: 'pepsi',
+//         type: 'food',
+//         price: 11
+//     },
+//     {
+//         name: 'coat',
+//         type: 'clothes',
+//         price: 11
+//     },
+//     {
+//         name: 'silver',
+//         type: 'metal',
+//         price: 11
+//     },
+//     {
+//         name: 'burger',
+//         type: 'food',
+//         price: 12
+//     },
+//     {
+//         name: 'gloves',
+//         type: 'clothes',
+//         price: 12
+//     },
+//     {
+//         name: 'iron',
+//         type: 'metal',
+//         price: 12
+//     },
+// ]
+//
+// const res = products.reduce((acc, el) => {
+//
+//     if (el.type === "clothes") {
+//         acc.clothes.push(el)
+//     }
+//     if (el.type === "food") {
+//         acc.food.push(el)
+//     }
+//     if (el.type === "metal") {
+//         acc.metal.push(el)
+//     }
+//     return acc
+// }, {metal: [], clothes: [], food: []})
+//
+// console.log(res)
+// const res = {
+//     metal:
+//     clothes:
+//     food:
+// }

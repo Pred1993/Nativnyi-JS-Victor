@@ -310,11 +310,162 @@
 //
 // console.log(Foo)
 // console.log(Foo1)
-class BaseUser {
+// class BaseUser {
+//
+// }
+// class User extends BaseUser{
+//
+// }
+//
+// console.log(User.__proto__)
 
+// const promise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res()
+//     }, 2000)
+// }).then(() => {
+//     console.log(1)
+//     return 3
+// }).then((res) => {
+//     return 1
+// }).then(res => {
+//     console.log(res)
+// })
+
+// function add () {
+//     let value = 1
+//     return () => {
+//       return ++value
+//     }
+// }
+//
+// const res1 = add()
+// const res2 = add()
+// console.log(res1())
+// console.log(res2())
+
+
+//
+// obj.hello()
+//
+// function Constructor (name, age, city) {
+//     this.name = name
+//     this.age = age
+//     this.city = city
+// }
+//
+// const const1 = new Constructor('Artem', 22, 'Lida')
+//
+// console.log(const1)
+//
+// console.log(Constructor.__proto__ === Function.prototype)
+
+// const obj = {
+//     name: 'Artem',
+//     hello: () => {
+//        return  'hello guys'
+//     }
+// }
+//
+// console.dir(obj)
+
+//
+// const obj1 = {
+//     name: 'Lena',
+// }
+//
+// Object.setPrototypeOf(obj1, obj)
+//
+// console.log(obj1.hello())
+
+// class A {
+//    static name = 'Alex'
+// }
+//
+// class B extends A {
+//
+//     getName() {
+//         console.log(1)
+//     }
+//
+// }
+
+// function Af () {
+//
+// }
+//
+// function Bf () {
+//
+// }
+//
+// Af.age = 23
+//
+// Bf.prototype.__proto__ = Af.prototype
+// Bf.prototype.getName = function () {
+//     console.log(1)
+// }
+//
+// console.dir(Bf)
+// console.dir(Af)
+
+// foo()
+//
+// function foo () {
+//     console.log(1)
+// }
+
+//
+// Array.prototype.myMap = function () {
+//     console.log(1)
+// }
+//
+// const arr = [1,2,3]
+//
+// console.log(arr.myMap())
+//
+// console.log(null == undefined) // true
+// console.log(null === undefined) // false
+// console.log(null == null) // true
+// console.log(null === null) // true
+// console.log(undefined == undefined) //true
+// console.log(undefined === undefined)//true
+// console.log('undefined' == undefined)// false
+//
+// const foo = () => {
+//     console.log(bar)
+//
+//     {
+//         function bar() {
+//             return  1
+//         }
+//     }
+//
+//     console.log(bar)
+// }
+//
+// foo()
+//
+// for ( var i = 0; i < 10; i++) {
+//     let j = i
+//     setTimeout(() => {
+//         console.log(j)
+//     })
+// }
+// String.prototype.add = function (str) {
+//     return this + str
+// }
+// const arr = [1,2,3]
+//
+// const res = arr.join('a').replaceAll('a', '0,').add('0').split(',').map(n => +n).reduce((acc, n) => {
+//     acc[n] = n
+//     return acc
+// },{})
+// console.log(res)
+
+// 10,20,30
+
+const obj = {
+    name: 'Alex'
 }
-class User extends BaseUser{
 
-}
-
-console.log(User.__proto__)
+const arr = [1,2,3,4]

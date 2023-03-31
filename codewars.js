@@ -776,6 +776,7 @@
 // // console.log(removeSmallest([5, 3, 2, 1, 4]))
 // // console.log(removeSmallest([2, 2, 1, 2, 1]))
 // console.log(removeSmallest([ 2, 1, 5, -10, 4, -10, 2 ]))
+
 //второй способ
 // function removeSmallest(numbers) {
 //     const smallNumber = Math.min(...numbers);
@@ -960,3 +961,158 @@
 //     clothes:
 //     food:
 // }
+// const author = ['Гарри Беквит', 'Вячеслав Семенчук']
+//
+// const autors = author?.length ? author.reduce((acc, el) => {
+//     return `${acc} ${el}`
+// }) : ''
+// console.log(autors)
+
+// const sortGenres = genres.reduce((acc, el) => {
+//     const property = el.name
+//
+//     acc['Бизнес'] = []
+//
+//     return acc
+// }, {})
+//
+// const obj = {
+//     a: 1,
+//     foo(){
+//         return this.a;
+//     },
+//     baz: () => this.a
+// }
+// console.log(obj.foo())
+// console.log(obj.baz())
+//
+// console.log(obj.baz.bind(obj)())
+
+
+// обязательно пройти
+
+// try{
+//     if(console.log(1)){
+//         console.log(2)
+//     }else{
+//         throw new Error('Ошибка')
+//     }
+//
+// }catch(error){
+//     console.log(error, 'error')
+//     console.log(3)
+//     try{
+//         var a = 5
+//         change(a)
+//     }finally{
+//         console.log(a)
+//     }
+// }finally{
+//     console.log(4)
+// }
+//
+// function change() {a++
+//     console.log(a)
+// }
+
+// const x = new Promise((resolve, reject) => {
+//     resolve(10), reject(4)
+// })
+// console.log(x)
+//
+
+// let x = 0
+// function c() {
+//     let y = 0
+//     return {
+//         inc: () => {
+//             x++;
+//             y++
+//         },
+//         getX: () => x,
+//         getY: () => y
+//     }
+// }
+//
+// c().inc()
+// c().inc()
+// console.log(c().getX())
+// console.log(c().getY())
+
+////
+
+// const promise = new Promise((res) => {
+//     console.log(1);
+//     setTimeout(()=>{
+//         console.log(4)
+//         res()
+//         console.log(5)
+//     },1)
+// })
+// console.log(2)
+// promise.then(() =>{console.log(3)})
+// Promise.resolve().then(()=>{console.log(6)})
+// setTimeout(()=>{
+//     console.log(100)
+// },0)
+
+// console.log(5 + '-10')
+// console.log(null??false)
+// console.log(5 + '10')
+// const obj={
+//     name:5
+// }
+// console.log(obj?.name)
+// console.log(!'false' ? 10:!000)
+// console.log(5/0)
+// console.log(0/0)
+// console.log(true+false)
+
+// let x,y,i=0
+// x=i++
+// console.log(i)
+// console.log(x)
+// y=++x
+// console.log(y)
+// console.log(eval(y= 5 + y))
+// console.log(eval('console.log(8)'))
+
+
+// let arr = [4,7,9]
+//
+// // for in
+// for (let key in arr) {
+//     console.log(arr[key])
+// }
+//
+// //for off
+//
+// for (let item of arr) {
+//     console.log(item)
+// }
+//
+// // let allP = document.getElementsByTagName('p')
+// let allP = document.querySelectorAll('p')
+// console.log(allP)
+//
+// console.dir(Object)
+
+// let recipeMap = new Map([
+//     ["огурец", 500],
+//     ["помидор", 350],
+//     ["лук",    50]
+// ]);
+//
+// console.log(recipeMap)
+
+// function unique(arr) {
+//     /* ваш код */
+//
+//     return new Set(arr)
+// }
+//
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+//
+// console.log(unique(values))

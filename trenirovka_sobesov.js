@@ -7,6 +7,7 @@
 // }).then((res) => {
 //     console.log(res)
 // })
+// console.dir(promise)
 //
 // function increase () {
 //     let sum = 0
@@ -456,16 +457,22 @@
 // }
 // const arr = [1,2,3]
 //
-// const res = arr.join('a').replaceAll('a', '0,').add('0').split(',').map(n => +n).reduce((acc, n) => {
-//     acc[n] = n
-//     return acc
-// },{})
-// console.log(res)
+const res = arr.join('a').replaceAll('a', '0,').add('0').split(',').map(n => +n).reduce((acc, n) => {
+    acc[n] = n
+    return acc
+},{})
+console.log(res)
 
 // 10,20,30
 
-const obj = {
-    name: 'Alex'
-}
+// function num (nu1, num2) {
+//     return Array.from(arguments)
+// }
+//
+// console.log(num('Aptev', 'adawdwa'))
 
-const arr = [1,2,3,4]
+
+const awdwa = () => {
+
+}
+console.dir(awdwa)

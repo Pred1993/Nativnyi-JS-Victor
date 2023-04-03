@@ -457,11 +457,11 @@
 // }
 // const arr = [1,2,3]
 //
-const res = arr.join('a').replaceAll('a', '0,').add('0').split(',').map(n => +n).reduce((acc, n) => {
-    acc[n] = n
-    return acc
-},{})
-console.log(res)
+// const res = arr.join('a').replaceAll('a', '0,').add('0').split(',').map(n => +n).reduce((acc, n) => {
+//     acc[n] = n
+//     return acc
+// },{})
+// console.log(res)
 
 // 10,20,30
 
@@ -470,9 +470,170 @@ console.log(res)
 // }
 //
 // console.log(num('Aptev', 'adawdwa'))
+//
+// const arr = [1,2,3,4]
+//
+// const iterator = arr[Symbol.iterator]()
+// console.log(iterator)
+//
+// while (true) {
+//     const item = iterator.next()
+//     console.log(item)
+//     if (item.done) break
+//     console.log(item.value)
+// }
 
+// const range = {
+//     from: 0,
+//     to: 10,
+//     [Symbol.iterator]() {
+//         console.log('prevwork')
+//         let from = this.from
+//         let to = this.to
+//         return {
+//             next() {
+//                 console.log('work')
+//                 if (from <= to) {
+//                     return {value: from++, done: false}
+//                 } else {
+//                     return {value: undefined, done: true }
+//                 }
+//             }
+//         }
+//
+//     }
+//
+// }
+// for(el of range) {
+//     console.log(el)
+// }
+// 'use strict'
+// const obj = {
+//     name: 'Artem',
+//     age: 30
+// }
+// Object.preventExtensions(obj)
+//
+// obj.city = 'Minsk'
+// console.log(obj)
 
-const awdwa = () => {
+// console.dir(Array)
+// console.log(Array(7))
 
+// function f2() {
+//     let out = ''
+//     for (let i = 1; i <= 30; i++) {
+//         out += i + ' '
+//     }
+//     console.log(out)
+// }
+//
+// f2()
+//
+// let i = 0
+// let out = i + ' '
+// function rec () {
+//     if(i === 30) return
+//     i++
+//     out += i
+//     rec()
+// }
+// rec()
+// function random(min, max) {
+//     let rand = min + Math.random() * (max + 1 - min)
+//     return Math.floor(rand)
+// }
+//
+// let n = 0
+// let sum = 0
+// function value ( ) {
+//     console.log(n)
+//     if (sum >= 100) return
+//     sum = sum + random(10, 20)
+//     console.log(sum)
+//     n = n + 1
+//     value()
+// }
+//
+// value()
+// function factorial (n) {
+//     if (n === 1) return 1
+//     return n * factorial(n-1)
+// }
+//
+//
+// console.log(factorial(5))
+
+// const struct = {
+//     left: 12,
+//     right: 12,
+//     children: [
+//         {
+//             left: 15,
+//             right: 13,
+//             children: []
+//         },
+//         {
+//             left: 62,
+//             right: 14,
+//             children: [
+//                 {
+//                     left: 20,
+//                     right: 2,
+//                 },
+//             ]
+//         },
+//
+//     ]
+// }
+//
+// function result(struct) {
+//     let right = []
+//     let left = []
+//
+//     function rec(obj) {
+//         for (let key in obj) {
+//             const value = obj[key]
+//             if (key === 'left') left.push(value)
+//             if (key === 'right') right.push(value)
+//             if (Array.isArray(value)) {
+//                 value.forEach((el) => {
+//                     rec(el)
+//                 })
+//             }
+//         }
+//
+//     }
+//
+//     rec(struct)
+//
+//     return {right, left}
+// }
+//
+// console.log(result(struct))
+
+// console.log(undefined === undefined)
+// console.log(NaN === NaN)
+
+const obj = {
+    name: "Artem",
+    getName: () => {
+        console.log(this.name)
+    }
 }
-console.dir(awdwa)
+
+console.log(obj.getName())
+
+class Artem {
+    constructor(name) {
+        this.name = name
+    }
+
+    getName ()  {
+        return this.name
+    }
+}
+
+const artem = new Artem('Artem')
+
+console.log(artem.getName())

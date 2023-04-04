@@ -615,25 +615,86 @@
 // console.log(undefined === undefined)
 // console.log(NaN === NaN)
 
-const obj = {
-    name: "Artem",
-    getName: () => {
-        console.log(this.name)
-    }
-}
+// const obj = {
+//     name: "Artem",
+//     getName: () => {
+//         console.log(this.name)
+//     }
+// }
+//
+// console.log(obj.getName())
+//
 
-console.log(obj.getName())
 
-class Artem {
-    constructor(name) {
-        this.name = name
-    }
 
-    getName ()  {
-        return this.name
-    }
-}
+// function Artem(name, age) {
+//     this.name = name,
+//         this.age = age
+// }
+//
+// Artem.prototype.getName = function () {
+//     return this.name
+// }
+//
+// Artem.getAge = function () {
+//     console.log(1)
+// }
+//
+// console.log(Artem.prototype.__proto__ === Object.prototype)
+// console.dir(Artem)
+//
+// const artem = new Artem('Artem', 30)
+// console.log(artem)
+//
+// console.log(artem.getName())
+// console.log(artem.getAge())
 
-const artem = new Artem('Artem')
+// class Artem {
+//     age = 32
+//     someFunction = () => {}
+//
+//     constructor(name) {
+//         this.name = name
+//     }
+//
+//     getName ()  {
+//         return this.name
+//     }
+// }
+//
+// const artem = new Artem('Artem')
+//
+// console.log(artem.getName())
+// console.dir(Artem)
+// console.dir(artem.__proto__ === Artem.prototype)
 
-console.log(artem.getName())
+
+// console.log(1);
+//
+// setTimeout(() => console.log(2), 1000);
+//
+// Promise.resolve().then(() => console.log(3));
+//
+// Promise.resolve()
+//     .then(() => {
+//         setTimeout(() => {
+//             console.log(4)
+//             return 10
+//         } , 4000)
+//
+//     })
+//     .then((name) => console.log(name))
+//
+// Promise.resolve().then(() => console.log(6));
+//
+// Promise.resolve().then(() => console.log(7));
+//
+// setTimeout(() => console.log(8), 2000);
+//
+// console.log(9);
+//
+//
+//
+// // 1 9 3 6 7 5 2 8 4
+
+console.log([1,2] - [1,2,3])

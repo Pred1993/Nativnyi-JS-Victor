@@ -126,24 +126,22 @@
 
 //1 4 10 5 6 7 8 2 3 9
 
-//1 4 10 5 6 7 2 3 9 8
-
 
 // console.log("Start")
-
+//
 // setTimeout(function timeout() {
 //     console.log('timeout');
 // }, 2);
-
+//
 // let p = new Promise(function (resolve) {
 //     console.log('Create promise');
 //     resolve();
 // });
-
+//
 // p.then(function () {
 //     console.log('Handle promise');
 // });
-
+//
 // console.log('End');
 
 //Start create promise End Handle promise timeout

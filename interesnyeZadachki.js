@@ -60,7 +60,7 @@
 // }
 
 //7
-
+//
 // let obj = {
 //     name: 'Artem',
 //     age: 25,

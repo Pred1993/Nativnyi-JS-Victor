@@ -24,6 +24,7 @@ const students = [
         scores: 100
     }
 ];
+
 // const names = ["Bob", "Alex", "Nick", "John"]
 const getNames = (arr) => {
     const result = []

@@ -24,9 +24,28 @@
 //     console.log(item)
 // }
 
-const p = document.querySelector('.p1')
-console.log(p)
-const pContent = p.innerHTML
-console.log(pContent)
+const forOf = document.querySelector('.forOf')
 
-console.log(p.innerHTML = 'Я номер 1 ')
+const newElement = document.createElement('div')
+
+
+newElement.textContent = 'Привет Мир!'
+console.log(newElement)
+
+const newText = document.createTextNode('И тебе привет!')
+
+console.log(newText)
+
+forOf.before(newElement)
+forOf.after(newElement)
+
+const p1 = document.querySelector('.p1')
+console.log(p1)
+
+const copyP1 = p1.cloneNode(true)
+
+const p5 = document.querySelector('.p5')
+console.log(p5)
+
+p1.before(copyP1)
+

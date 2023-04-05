@@ -626,7 +626,6 @@
 //
 
 
-
 // function Artem(name, age) {
 //     this.name = name,
 //         this.age = age
@@ -697,4 +696,152 @@
 //
 // // 1 9 3 6 7 5 2 8 4
 
-console.log([1,2] - [1,2,3])
+// console.log([1,2] - [1,2,3])
+
+// function num (name, age, city) {
+//     const arg = arguments
+//     console.log(arg)
+//
+//     for(let key in arg) {
+//         console.log(arg[key])
+//     }
+//
+//     for( let el of arg) {
+//         console.log(el)
+//     }
+// }
+//
+// num("Artem", 23, "Lida")
+
+const students = [
+    {
+        name: "Bob",
+        age: 22,
+        isMarried: true,
+        scores: 85,
+    },
+    {
+        name: "Alex",
+        age: 21,
+        isMarried: true,
+        scores: 89
+    },
+    {
+        name: "Nick",
+        age: 20,
+        isMarried: false,
+        scores: 120
+    },
+    {
+        name: "John",
+        age: 19,
+        isMarried: false,
+        scores: 100
+    }
+];
+
+// const getNames = (students, func) => {
+//     const result = []
+//     for (let i = 0; i < students.length; i++) {
+//         const value = func(students[i])
+//         result.push(value)
+//     }
+//     return result
+// }
+//
+// console.log(getNames(students, (st) => st.name))
+
+// Array.prototype.customMap = function (func) {
+//     const arr = this
+//     const result = []
+//     for (let el of arr) {
+//         const value = func(el)
+//         result.push(value)
+//     }
+//     return result
+// }
+//
+// console.log(students.customMap((st) => st.name))
+// console.log(students.map((st) => st.name))
+//
+//
+// Array.prototype.customFilter = function (func) {
+//     const arr = this
+//     const result = []
+//     for (let el of arr) {
+//         const value = func(el)
+//         value && result.push(el)
+//     }
+//     return result
+// }
+//
+// console.log(students.filter((st) => st.scores >= 90))
+// console.log(students.customFilter((st) => st.scores >= 90))
+//
+// Array.prototype.customFind = function (func) {
+//     const arr = this
+//     const result = {}
+//     for (let el of arr) {
+//         console.log(el, 'el')
+//         const value = func(el)
+//         if (value) {
+//             Object.assign(result, el)
+//             break
+//         }
+//     }
+//     return result
+// }
+
+// console.log(students.find((st) => st.scores === 89))
+// console.log(students.customFind((st) => st.scores === 89))
+//
+// const arr = [1,2,3,[4,5,[6,7]], 8,9]
+
+// Array.prototype.customFlat = function (num) {
+//     let n = 0
+//     const arr = this
+//     function rec (arr) {
+//         return arr.reduce((acc, el) => {
+//             return Array.isArray(el) ? [...acc, ...rec.call(el, el)]  : [...acc, el]
+//         }, [])
+//     }
+//    return rec(arr)
+// }
+//
+// console.log(arr.customFlat(1))
+
+// let nums = [13, 11, 67, 12, 99, 87]
+// for (let j = 0; j < nums.length - 1; j++) {
+//     let isSorted = true
+//     for (let i = 0; i < nums.length - 1 - j; i++) {
+//         if (nums[i] > nums[i +1]) {
+//             isSorted = false;
+//             [nums[i + 1], nums[i]] = [nums[i], nums[i + 1]]
+//         }
+//
+//     }
+//     if(isSorted) break
+// }
+//
+// console.log(nums)
+
+// const str = 't e x e t'
+// console.log(str.split(' ').join(''))
+// console.log(String.prototype)
+
+function change (a, obj1, obj2) {
+    a = a* 10
+    obj1.name = 'Dima'
+    obj2 = {age: 30}
+    console.log(obj2)
+}
+
+let a = 5
+let obj1 = {name: 'Artem'}
+let obj2 = {age: 25}
+
+change(a, obj1, obj2)
+
+console.log(a)
+console.log(obj1)
+console.log(obj2)
